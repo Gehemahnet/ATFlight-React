@@ -14,9 +14,7 @@ const Plane = function(props){
       <div className="flight-by-route__plane-text">
         <h2 className="flight-by-route__plane-name">{props.plane.name}</h2>
         <h4 className="flight-by-route__plane-crew">
-          {props.plane.crewNumber == 'No crew'? 
-          'No crew':
-          'x'+ props.plane.crewNumber +'Crew:' + props.plane.crew
+          {props.plane.crewNumber == 'No Crew'? 'No Crew': 'x'+ props.plane.crewNumber +'Crew:' + props.plane.crew
           }
         </h4>
       </div> 
