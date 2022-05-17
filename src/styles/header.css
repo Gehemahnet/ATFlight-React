@@ -9,6 +9,9 @@ header{
   align-items: center;
   height: 96px;
 }
+.header__logo img:first-child{
+  margin-right: 10px;
+}
 
 .header__navigation{
   display: flex;

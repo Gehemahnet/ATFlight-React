@@ -24,7 +24,7 @@ const Header = function() {
         <div className="header__theme-switcher">
           <img id="theme-switcher" src={themeSwitcher}/>
         </div>
-    </div>
+      </div>
     </header>
   )
 }

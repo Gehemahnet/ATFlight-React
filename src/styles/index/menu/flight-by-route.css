@@ -24,94 +24,17 @@
   line-height: 27px;
   margin-left: 8px;
 }
-.flight-by-route__location-from,
-.flight-by-route__location-to{
-  display: flex;
-  height: 56px;
+.flight-by-route__charter-rent._active{
+  display: block;
 }
-#location-from-input,
-#location-to-input{
-  width: 517px;
-  border-radius: 8px;
-  border: none;
-  background: #F7F7F7;
-  padding: 16px 0 16px 10px;
+.flight-by-route__charter-rent._disabled{
+  display: none;
 }
-#change-locations{
-  border: none;
-  background: none;
+.flight-by-route__seat-ticket._active{
+  display: block;
+  position: relative;
 }
-#change-locations img{
-  margin: 8px 0 8px 492px;
+.flight-by-route__seat-ticket._disabled{
+  display: none;
 }
-.flight-by-route__position-button{
-  margin-left: -40px;
-  border: none;
-  background: none;
-}
-.flight-by-route__chart-button{
-  margin: 0 30px 0 50px;
-  border: none;
-  padding: 19px;
-  background: #F7F7F7;
-}
-#rent-dates-input{
-  width: 190px;
-  padding: 16px 0 16px 16px;
-  border: none;
-  border-radius: 8px;
-  background: #F7F7F7;
-}
-.flight-by-route__calendar{
-  margin-left: -40px;
-  border: none;
-  background: none;
-}
-#plane-type-selection{
-  margin-left: 30px;
-}
-.flight-by-route__selection{
-  width: 206px;
-  padding-left: 16px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 400;
-  appearance: none;
-  overflow: hidden;
-  background-color: #F7F7F7;
-  background: url(../../../images/index/menu/flight-by-route/select-dropdown.svg)
-   no-repeat 175px,#F7F7F7
-}
-.flight-by-route__footer{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 45px 0 15px;
-}
-#show-more-filters{
-  display: flex;
-  align-items: center;
-  height: 27px;
-  font-size: 16px;
-  background: none;
-  border: none;
-  color: #254D9B;
-}
-#show-more-filters span{
-  margin-left: 15px;
-}
-#flight-by-route__search{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  background: #FCE036;
-  padding: 17px 37px;
-  border: none;
-}
-#flight-by-route__search span{
-  margin-left: 8px
-}
-
-
 

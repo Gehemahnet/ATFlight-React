@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import '../../../../styles/index/main/section/Flight-by-route__card.css'
 import Seat from "../../../../images/index/main/section/Flight-by-route__plane/seat.svg";
 import Speed from '../../../../images/index/main/section/Flight-by-route__plane/speed.svg'
 import Range from '../../../../images/index/main/section/Flight-by-route__plane/range.svg'
@@ -9,21 +10,25 @@ const Plane = function(props){
     <div id={props.plane.id} className="flight-by-route__plane">
       <div className="flight-by-route__plane-photo">
         <img src={props.plane.cardPhoto}/>
-        <span>{props.plane.price}$</span>
+        <div>{props.plane.price}$</div>
       </div>
       <div className="flight-by-route__plane-text">
         <h2 className="flight-by-route__plane-name">{props.plane.name}</h2>
         <h4 className="flight-by-route__plane-crew">
-          {props.plane.crewNumber == 'No Crew'? 'No Crew': 'x'+ props.plane.crewNumber +'Crew:' + props.plane.crew
+          {props.plane.crewNumber == 'No Crew'?
+          <span>No Crew</span>:
+          <span>x{props.plane.crewNumber} Crew: <span className="flight-by-route__plane-tag-crew">
+          {props.plane.crew.join(', ')}</span>
+          </span>
           }
         </h4>
       </div> 
       <div className="flight-by-route__plane-tags">
-        <a className="flight-by-route__plane-tag flight-by-route__plane-tag_active" ><img src={PaperPlane}/>{props.plane.type}</a>
-        <a className="flight-by-route__plane-tag" ><img src={Seat}/>x{props.plane.seatsNumber}</a>
+        <a className="flight-by-route__plane-tag flight-by-route__plane-tag_active" ><img src={PaperPlane}/><span>{props.plane.type}</span></a>
+        <a className="flight-by-route__plane-tag" ><img src={Seat}/><span>x{props.plane.seatsNumber}</span></a>
         <a className="flight-by-route__plane-tag" >{props.plane.buildYear} Year</a>
-        <a className="flight-by-route__plane-tag" ><img src={Speed}/>{props.plane.speed} km/h</a>
-        <a className="flight-by-route__plane-tag" ><img src={Range}/>{props.plane.maxRange} km/h</a>
+        <a className="flight-by-route__plane-tag" ><img src={Speed}/><span>{props.plane.speed} km/h</span></a>
+        <a className="flight-by-route__plane-tag" ><img src={Range}/><span>{props.plane.maxRange} km/h</span></a>
       </div>
     </div>
   )
