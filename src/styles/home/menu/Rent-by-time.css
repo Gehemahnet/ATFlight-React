@@ -1,0 +1,85 @@
+.rent-by-time{
+  display: none;
+}
+.rent-by-time._active{
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+}
+.rent-by-time._active >*{
+  margin-top: 30px;
+}
+.rent-by-time__row{
+  display: flex;
+  justify-content: space-between;
+}
+.rent-by-time#rent-by-time__returnLocation{
+}
+.rent-by-time__checkbox{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+.rent-by-time__checkbox input{
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.rent-by-time__checkbox label{
+  align-self: center;
+  display: flex;
+  width: 16px;
+  height: 16px;
+}
+.rent-by-time__checkbox input+label::before{
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid #908BCE;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.rent-by-time__checkbox input:checked+label::before{
+  border-color: #908BCE;
+  background-color: #908BCE;
+  background-image: url(../../../images/UI/checkbox-checked.svg);
+}
+.rent-by-time__checkbox span{
+  margin-left: 16px;
+}
+.rent-by-time__type-selection__control{
+  font-size: 16px;
+  width: 527px;
+  height: 56px;
+  border-radius: 8px !important;
+  border: none !important;
+}
+.rent-by-time__type-selection__placeholder{
+  color: black !important;
+  font-size: 16px !important;
+}
+.rent-by-time__type-selection__multi-value{
+  background: none !important;
+}
+.rent-by-time__type-selection__clear-indicator{
+  display: none !important;
+}
+.rent-by-time__type-selection__multi-value__remove{
+  color: rgba(224, 224, 224, 1) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.rent-by-time__type-selection__indicator-separator{
+  display: none;
+}
+.rent-by-time__type-selection__indicator.rent-by-time__type-selection__dropdown-indicator{
+  color: black;
+}

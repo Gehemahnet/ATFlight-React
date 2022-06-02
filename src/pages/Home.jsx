@@ -1,7 +1,7 @@
 // import './styles/Home.css';
 import Header from '../components/Header.jsx';
-import Menu from '../components/index/menu/Menu.jsx';
-import Main from '../components/index/main/Main.jsx';
+import Menu from '../components/home/menu/Menu.jsx';
+import Main from '../components/home/main/Main.jsx';
 import Footer from '../components/Footer.jsx'
 
 

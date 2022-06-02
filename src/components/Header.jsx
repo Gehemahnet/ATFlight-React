@@ -4,6 +4,7 @@ import logoImg from "../images/header/logo-img.svg";
 import logoText from "../images/header/logo-txt.svg";
 import notificationBell from "../images/header/bell.svg";
 import themeSwitcher from "../images/header/theme.svg";
+import Button from "./UI/button/Button";
 
 const Header = function() {
   return(
@@ -20,7 +21,10 @@ const Header = function() {
           <a className="header__link">Settings</a>
           <a id="header__notification" className="header__link"><img src={notificationBell}/></a>
         </div>
-        <button id="header__login-button">Login</button>
+        <Button id="header__login-button" 
+                text={"Login"}
+                // onClick
+        />
         <div className="header__theme-switcher">
           <img id="theme-switcher" src={themeSwitcher}/>
         </div>
