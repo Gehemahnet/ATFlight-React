@@ -1,3 +1,4 @@
+import React from 'react';
 // import './styles/Home.css';
 import Header from '../components/Header.jsx';
 import Menu from '../components/home/menu/Menu.jsx';

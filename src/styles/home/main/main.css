@@ -35,9 +35,11 @@
   width: 1440px;
   height: 670px;
   position: relative;
+  z-index: -1;
 }
 .content-default__planes-image img{
   position: absolute;
+  z-index: -1;
 }
 /* Types of Vehicles */
 .content-default__vehicle-types{

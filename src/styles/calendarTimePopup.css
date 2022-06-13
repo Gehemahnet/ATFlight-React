@@ -1,0 +1,221 @@
+.rent-by-time__date-popup{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.rent-by-time__date-popup-wrapper{
+  display: none;
+}
+.rent-by-time__date-popup-wrapper._active{
+  display: block;
+  position: absolute;
+  top: 71px;
+  left: -165px;
+}
+.rent-by-time__date-popup-decorating{
+  width: 24px;
+  height: 24px;
+  transform: rotate(45deg);
+  background: white;
+  position: absolute;
+  top: -12px;
+}
+#rent-by-time-start-date .rent-by-time__date-popup-decorating{
+  left: 376px;
+}
+#rent-by-time-finish-date .rent-by-time__date-popup-wrapper{
+  left: -445px;
+}
+#rent-by-time-finish-date .rent-by-time__date-popup-decorating{
+  right: 105px;
+}
+.rent-by-time__date-popup-body{
+  position: relative;
+  background: white;
+  width: 785px;
+  padding: 30px 0;
+  border-radius: 10px;
+}
+.rent-by-time__date-popup-body-displayed{
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 12px 30px;
+  width: 100%;
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+  font-size: 20px;
+}
+.rent-by-time__date-popup-body-displayed>span{
+  font-family: "Oxygen";
+  font-size: 20px;
+  font-weight: 700;
+}
+.rent-by-time__date-popup-body-displayed-time-result{
+  margin-left: auto;
+  color: #908BCE;
+}
+.rent-by-time__date-popup-body-footer{
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.rent-by-time__date-popup-body-footer .button{
+  width: 204px;
+  height: 56px;
+  margin: 0;
+}
+.rent-by-time__date-popup-body-footer-close{
+  width: 24px;
+  margin-right: 13px;
+}
+.rent-by-time__date-popup-body-footer-buttons{
+  display: flex;
+}
+.rent-by-time__date-popup-body-footer-buttons button{
+  color: rgba(37, 77, 155, 1);
+  font-size: 16px;
+  font-family: 'Noto Sans JP';
+  border: none;
+  height: 24px;
+}
+
+.rc-time-picker {
+  display: inline-block;
+  position: relative;
+  margin-left: 16px;
+  width: 166px;
+}
+.rc-time-picker-clear {
+  display: none;
+}
+.rc-time-picker-clear-icon:hover:after {
+  color: #666;
+}
+.rc-time-picker-input {
+  font-family: "Noto Sans JP";
+  text-transform: uppercase;
+  width: 100%;
+  position: relative;
+  padding: 16px;
+  height: 56px;
+  font-size: 16px;
+  background: #F7F7F7 url('../images/UI/clock.svg') no-repeat;
+  background-position: bottom 16px right 16px;
+  border: none;
+  border-radius: 8px;
+}
+.rc-time-picker-input::placeholder{
+  text-transform: capitalize;
+}
+.rc-time-picker-input[disabled] {
+  color: #ccc;
+  background: #f7f7f7;
+  cursor: not-allowed;
+}
+.rc-time-picker-panel {
+  z-index: 1070;
+  width: 170px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.rc-time-picker-panel * {
+  box-sizing: border-box;
+}
+.rc-time-picker-panel-inner {
+  display: inline-block;
+  position: relative;
+  outline: none;
+  list-style: none;
+  font-size: 12px;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px #ccc;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+}
+.rc-time-picker-panel-narrow {
+  max-width: 113px;
+}
+.rc-time-picker-panel-input {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  cursor: auto;
+  line-height: 1.5;
+  outline: 0;
+  border: 1px solid transparent;
+}
+.rc-time-picker-panel-input-wrap {
+  box-sizing: border-box;
+  position: relative;
+  padding: 6px;
+  border-bottom: 1px solid #e9e9e9;
+}
+.rc-time-picker-panel-input-invalid {
+  border-color: red;
+}
+.rc-time-picker-panel-select {
+  float: left;
+  font-size: 12px;
+  border: 1px solid #e9e9e9;
+  border-width: 0 1px;
+  margin-left: -1px;
+  box-sizing: border-box;
+  width: 56px;
+  max-height: 144px;
+  overflow-y: auto;
+  position: relative;
+}
+.rc-time-picker-panel-select-active {
+  overflow-y: auto;
+}
+.rc-time-picker-panel-select:first-child {
+  border-left: 0;
+  margin-left: 0;
+}
+.rc-time-picker-panel-select:last-child {
+  border-right: 0;
+}
+.rc-time-picker-panel-select ul {
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.rc-time-picker-panel-select li {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 16px;
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+  text-align: left;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.rc-time-picker-panel-select li:hover {
+  background: #edfaff;
+}
+li.rc-time-picker-panel-select-option-selected {
+  background: #f7f7f7;
+  font-weight: bold;
+}
+li.rc-time-picker-panel-select-option-disabled {
+  color: #ccc;
+}
+li.rc-time-picker-panel-select-option-disabled:hover {
+  background: transparent;
+  cursor: not-allowed;
+}

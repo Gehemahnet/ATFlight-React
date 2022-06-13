@@ -5,7 +5,7 @@ import RentByTime from "./Rent-by-time.jsx"
 import SearchCrew from "./Search-crew"
 
 const Menu = function() {
-  const [chosenMenu,setChosenMenu] = useState("FlightByRoute")
+  const [chosenMenu,setChosenMenu] = useState("RentByTime")
   const chooseTab = (tab) => {
     setChosenMenu(tab)
   }

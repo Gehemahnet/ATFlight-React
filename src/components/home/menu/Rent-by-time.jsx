@@ -1,19 +1,53 @@
-import React, {Component, useState} from "react";
+import React, {Component, useEffect, useState} from "react";
 import "../../../styles/home/menu/Rent-by-time.css"
 import DestinationInput from "../../UI/input/Destination-input";
 import Select from "react-select";
-import { Calendar } from "react-calendar";
+import DateInput from "../../UI/input/Date-input";
 
 const RentByTime = ({ParentClassName}) => {
+  const [startDatePlaceholder, setStartDatePlaceholder] = useState('Start Date & Time')
+  const [finishDatePlaceholder, setFinishDatePlaceholder] = useState('Finish Date & Time')
+
+  const [startDatePopup, setStartDatePopup] = useState("Hidden")
+  const [finishDatePopup, setFinishDatePopup] = useState("Hidden")
+
   const [isReturnToAnother, setReturnToAnother] = useState(false)
   const typesToSelect = [
+
     {value:"Turboprops",label:"Turboprops"},{value:"Light-Sport Aircraft",label:"Light-Sport Aircraft"},
     {value:"Helicopters",label:"Helicopters"},{value:"Tricycle Gear Aircraft",label:"Tricycle Gear Aircraft"},
     {value:"Airbus",label:"Airbus"},{value:"Single Engine Piston Aircraft",label:"Single Engine Piston Aircraft"},
     {value:"Amphibious",label:"Amphibious"},{value:"Business Jets",label:"Business Jets"}
-]
-  const typesToSelectStyles = {
-    
+
+  ]
+
+  const confirmationAction = (popupToClose) => {
+  }
+  // const startDateconfirmationAction = (data) =>{
+  //   setStartDatePlaceholder(data)
+  // }
+  // const finishDateconfirmationAction = (data) =>{
+  //   setStartDatePlaceholder(data)
+  // }
+
+  const toggleStartCalendar = () => {
+    if(startDatePopup === "Hidden"){
+      setStartDatePopup("Shown")
+
+    } else {
+      setStartDatePopup("Hidden")
+    }
+    setFinishDatePopup("Hidden")
+  }
+
+  const toggleFinishCalendar = () => {
+    if(finishDatePopup === "Hidden"){
+      setFinishDatePopup("Shown")
+
+    } else {
+      setFinishDatePopup("Hidden")
+    }
+    setStartDatePopup("Hidden")   
   }
   return(
     <form className={ParentClassName}>
@@ -41,21 +75,40 @@ const RentByTime = ({ParentClassName}) => {
           <span>Rent without a pilot?</span>
         </div>
       </div>
-      <DestinationInput className={isReturnToAnother === true? "destination-input": "destination-input _hidden"}
-                        buttonType={'button'}
-                        parrentId={"rent-by-time__returnLocation"}
-                        inputPlaceholder={"Return To"}
-      />
+      <DestinationInput 
+          className={isReturnToAnother === true? "destination-input": "destination-input _hidden"}
+          buttonType={'button'}
+          parrentId={"rent-by-time__returnLocation"}
+          inputPlaceholder={"Return To"}/>
+
       <div className="rent-by-time__row">
-        <Select classNamePrefix="rent-by-time__type-selection"
-                options={typesToSelect}
-                closeMenuOnSelect={false}
-                placeholder={"Plane Types"}
-                isSearchable
-                isMulti
-        />
-        <Calendar/>
+        <Select 
+            classNamePrefix="rent-by-time__type-selection"
+            closeMenuOnSelect={false}
+            options={typesToSelect}
+            placeholder={"Plane Types"}
+            isSearchable
+            isMulti/>
+
+        <DateInput 
+            className={'rent-by-time__date'}
+            popupHidden={startDatePopup}
+            placeholder={'Start Date & Time'}
+            id={"rent-by-time-start-date"}
+            image={'up'}
+            onClick={toggleStartCalendar}
+            confirmationAction={confirmationAction(setStartDatePlaceholder)}/>
+
+        <DateInput 
+            className={'rent-by-time__date'}
+            popupHidden={finishDatePopup}
+            placeholder={'Finish Date & Time'}
+            id={"rent-by-time-finish-date"}
+            image={'down'}
+            onClick={toggleFinishCalendar}
+            confirmationAction={confirmationAction(setFinishDatePlaceholder)}/>
       </div>
+
     </form>
   )
 }

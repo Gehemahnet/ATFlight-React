@@ -10,8 +10,8 @@
   margin-top: 30px;
 }
 .rent-by-time__row{
+  position: relative;
   display: flex;
-  justify-content: space-between;
 }
 .rent-by-time#rent-by-time__returnLocation{
 }
@@ -20,6 +20,7 @@
   display: flex;
   align-items: center;
   width: 250px;
+  margin-left: 30px;
 }
 .rent-by-time__checkbox input{
   position: absolute;
@@ -82,4 +83,20 @@
 }
 .rent-by-time__type-selection__indicator.rent-by-time__type-selection__dropdown-indicator{
   color: black;
+  padding-right: 20px;
+}
+.rent-by-time__date{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-left: 30px;
+  width: 250px;
+  height: 56px;
+  padding-left: 16px;
+  border-radius: 8px;
+  background: white;
+}
+.rent-by-time__date>img{
+  margin-right: 18px;
 }
