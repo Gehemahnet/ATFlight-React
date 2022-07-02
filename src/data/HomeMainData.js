@@ -1,105 +1,105 @@
 const TYPES = [
   { id: 1,
-    name: "Light-Sport Aircraft",
-    icon: require("../images/home/main/vehicles/1.svg"),
+    name: "Light-Sport Aircraft 1",
+    icon: require("../images/home/main/vehicles/1.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 2,
     name: "Turboprops",
-    icon: require("../images/home/main/vehicles/2.svg"),
+    icon: require("../images/home/main/vehicles/2.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 3,
-    name: "Light-Sport Aircraft",
-    icon: require("../images/home/main/vehicles/3.svg"),
+    name: "Multi-Engine Piston",
+    icon: require("../images/home/main/vehicles/3.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 4,
-    name: "Light-Sport Aircraft",
-    icon: require("../images/home/main/vehicles/4.svg"),
+    name: "Single Engine Piston Aircraft 1",
+    icon: require("../images/home/main/vehicles/4.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 5,
-    name: "Light-Sport Aircraft",
-    icon: require("../images/home/main/vehicles/5.svg"),
+    name: "Light-Sport Aircraft 2",
+    icon: require("../images/home/main/vehicles/5.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 6,
-    name: "Helicopters",
-    icon: require("../images/home/main/vehicles/6.svg"),
+    name: "Helicopters 1",
+    icon: require("../images/home/main/vehicles/6.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 7,
-    name: "Tricycle Gear Aircraft",
-    icon: require("../images/home/main/vehicles/7.svg"),
+    name: "Tricycle Gear Aircraft 1",
+    icon: require("../images/home/main/vehicles/7.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 8,
-    name: "Single Engine Piston Aircraft",
-    icon: require("../images/home/main/vehicles/8.svg"),
+    name: "Single Engine Piston Aircraft 2",
+    icon: require("../images/home/main/vehicles/8.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 9,
     name: "Airbus",
-    icon: require("../images/home/main/vehicles/9.svg"),
+    icon: require("../images/home/main/vehicles/9.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 10,
-    name: "Tricycle Gear Aircraft",
-    icon: require("../images/home/main/vehicles/10.svg"),
+    name: "Tricycle Gear Aircraft 2",
+    icon: require("../images/home/main/vehicles/10.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 11,
     name: "Amphibious",
-    icon: require("../images/home/main/vehicles/11.svg"),
+    icon: require("../images/home/main/vehicles/11.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 12,
-    name: "Helicopters",
-    icon: require("../images/home/main/vehicles/12.svg"),
+    name: "Helicopters 2",
+    icon: require("../images/home/main/vehicles/12.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 13,
     name: "Tiltrotors",
-    icon: require("../images/home/main/vehicles/13.svg"),
+    icon: require("../images/home/main/vehicles/13.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 14,
-    name: "Business Jets",
-    icon: require("../images/home/main/vehicles/14.svg"),
+    name: "Business Jets 1",
+    icon: require("../images/home/main/vehicles/14.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },
   {
     id: 15,
-    name: "Business Jets",
-    icon: require("../images/home/main/vehicles/15.svg"),
+    name: "Business Jets 2",
+    icon: require("../images/home/main/vehicles/15.svg").default,
     description:"Imperdiet diam pretium, vulputate porttitor egestas amet, urna, leo. Consectetur in ut dignissim ultricies in arcu. Ut nec turpis egestas odio quam nunc ante quis placerat. Orci augue eu quisque vulputate.",
     readMore: ""
   },

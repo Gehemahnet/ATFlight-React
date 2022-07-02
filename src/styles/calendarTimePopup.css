@@ -1,19 +1,26 @@
 .rent-by-time__date-popup{
+  display: none;
+}
+.rent-by-time__date-popup._active{
+  display: block;
+  position: absolute;
+  top: 75px;
+  left: -165px;
+}
+
+.rent-by-time__date-popup-overlay{
+  display: block;
   width: 100%;
   height: 100%;
   position: fixed;
+  z-index: 2;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2)
 }
 .rent-by-time__date-popup-wrapper{
-  display: none;
-}
-.rent-by-time__date-popup-wrapper._active{
-  display: block;
-  position: absolute;
-  top: 71px;
-  left: -165px;
+  position: relative;
+  z-index: 3;
 }
 .rent-by-time__date-popup-decorating{
   width: 24px;
@@ -26,7 +33,7 @@
 #rent-by-time-start-date .rent-by-time__date-popup-decorating{
   left: 376px;
 }
-#rent-by-time-finish-date .rent-by-time__date-popup-wrapper{
+#rent-by-time-finish-date .rent-by-time__date-popup{
   left: -445px;
 }
 #rent-by-time-finish-date .rent-by-time__date-popup-decorating{

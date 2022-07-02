@@ -6,32 +6,53 @@ import CalendarTimePopup from "./CalendarTimePopup";
 
 
 const DateInput = ({
-  popupHidden, 
-  confirmationAction,
+  textBeforeTime,
   className, 
   id, 
-  placeholder, 
-  image, 
-  onClick}) => {
+  defaultPlaceholder, 
+  image
+  }) => {
   
-  const [isPopupClosed, changeIsPopupClosed] = useState(popupHidden)
+  const [placeholderText, setPlaceholderText] = useState(defaultPlaceholder)
+  const [popupState, setPopupState] = useState("Hidden")
   
+  const closePopup = () => {
+    setPopupState("Hidden")
+  }
+
   useEffect(()=>{
-    changeIsPopupClosed(popupHidden)
-  },[popupHidden, isPopupClosed])
+    setPopupState(popupState)
+    setPlaceholderText(placeholderText)
+  },
+  [popupState, placeholderText]
+  )
   
   return(
-    <div onClick={onClick} className={className}
-         id={id}>
+    <div 
+      onClick={ () =>{
+        {popupState == "Hidden"? setPopupState("Shown"): setPopupState("Hidden")}
+        }
+      } 
+      className={className}
+      id={id}
+    >
+
       <span  className={className + '-input'}>
-      {placeholder}
+      {placeholderText}
       </span>
+
       <img src={image =='up'? PlaneUp: PlaneDown} alt=""/>
-      <CalendarTimePopup 
-          confirmationAction={confirmationAction}
-          popupHidden={isPopupClosed}
-          className={isPopupClosed == "Shown"? `${className}`: `${className}`}
-          placeholder={placeholder}/>
+
+      <CalendarTimePopup
+          resetAction={(e, placeholder) => {setPlaceholderText(defaultPlaceholder);closePopup()}}
+          confirmationAction={(e, date) => {closePopup(); setPlaceholderText(date)}}
+          closePopup ={closePopup}
+          textBeforeTime={textBeforeTime}
+          popup={popupState}
+          className={popupState == "Shown"? `${className}`: `${className}`}
+          defaultPlaceholder={defaultPlaceholder}
+          placeholder={placeholderText}
+      />
     </div>
   )
 }

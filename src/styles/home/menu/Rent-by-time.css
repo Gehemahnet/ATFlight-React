@@ -4,7 +4,7 @@
 .rent-by-time._active{
   display: flex;
   flex-direction: column;
-  padding-left: 30px;
+  padding: 0 30px 30px 30px;
 }
 .rent-by-time._active >*{
   margin-top: 30px;
@@ -12,8 +12,6 @@
 .rent-by-time__row{
   position: relative;
   display: flex;
-}
-.rent-by-time#rent-by-time__returnLocation{
 }
 .rent-by-time__checkbox{
   position: relative;
@@ -99,4 +97,14 @@
 }
 .rent-by-time__date>img{
   margin-right: 18px;
+}
+.rent-by-time__filters{
+  display: none;
+  justify-content: space-between;
+}
+.rent-by-time__filters._shown{
+  display: flex;
+}
+.rent-by-time__passengers{
+  width: 248px;
 }

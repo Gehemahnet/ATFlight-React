@@ -60,34 +60,62 @@
               0px 0px 1px rgba(0, 0, 0, 0.04);
   border-radius: 16px;
 }
+.content-default__vehicle-types-item:nth-child(5n+5){
+  margin-right: 0;
+}
+.content-default__vehicle-types-item:nth-child(n+6){
+  margin-top: 20px;
+}
 .content-default__vehicle-types-item{
+  position: relative;
+  margin-right: 20px;
+  height: 151px;
+}
+.content-default__vehicle-types-item._active .content-default__vehicle-types-item-overlay{
+  display: block;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+}
+.content-default__vehicle-types-item-overlay{
+  display: none;
+}
+.content-default__vehicle-types-item-wrapper{
+  position: relative;
   width: 156px;
-  height: 150px;
+  height: 100%;
   border: 1px solid #E0E0E0;
   border-radius: 8px;
   background: white;
-  margin: 10px 0;
 }
 .content-default__vehicle-types-content h4{
-  font-family: 'Noto Sans JP';
-  line-height: 23.17px;
+  width: 140px;
+  height: 47px;
+  font-size: 16px;
+  font-family: "Noto Sans JP";
   font-weight: 400;
+  text-align: center;
   margin-bottom: 10px;
-  max-width: 60%;
 }
-.content-default__vehicle-types-item button{ 
+.content-default__vehicle-types-item-wrapper button{ 
   display: flex;
-  width: 156px;
-  height: 100%;
-  background: rgb(255, 255, 255, 0.5);
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  width: 156px;
+  height: 100%;
+  background: rgb(255, 255, 255, 0.5);
+  padding: 0;
   background: none;
   border: none;
 }
-.content-default__vehicle-types-item img{
-  margin-top: 30px;
+.content-default__vehicle-types-item-wrapper img{
+  margin-top: auto;
+  margin-bottom: 20px;
 }
 .content-default__vehicle-types-item a{
   text-decoration: underline;
@@ -97,7 +125,7 @@
 .content-default__vehicle-types-item-description{
   display: none;
   width: 508px;
-  height: 150px;
+  height: 151px;
   background: #FBFBFB;
   box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04),
               0px 16px 24px rgba(0, 0, 0, 0.04), 
@@ -116,7 +144,7 @@
   padding: 15px 20px;
 }
 /* Types button activated */
-.content-default__vehicle-types-item._active{
+.content-default__vehicle-types-item._active .content-default__vehicle-types-item-wrapper{
   position: relative;
   z-index: 1;
   border: none;
@@ -125,6 +153,7 @@
 }
 .content-default__vehicle-types-item._active button{
   border: none;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
   background: white;
   position: relative;
   z-index: 3;

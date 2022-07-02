@@ -21,6 +21,8 @@ header{
 .header__link{
   line-height: 1.9;
   margin-left: 80px;
+  border: none;
+  background: none;
 }
 
 .header__link:first-child{

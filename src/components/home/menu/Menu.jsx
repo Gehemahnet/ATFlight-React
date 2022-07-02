@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "../../../styles/home/menu/menu.css";
 import FlightByRoute from "./Flight-by-route.jsx"
 import RentByTime from "./Rent-by-time.jsx"
+import SeacrhCrew from "./Search-crew";
 import SearchCrew from "./Search-crew"
 
 const Menu = function() {
-  const [chosenMenu,setChosenMenu] = useState("RentByTime")
+  const [chosenMenu,setChosenMenu] = useState("FlightByRoute")
   const chooseTab = (tab) => {
     setChosenMenu(tab)
   }
@@ -26,8 +27,9 @@ const Menu = function() {
                    onClick={()=> chooseTab("SearchCrew")}>Search Crew</div>
             </div>
             <div className="menu__body">
-              <FlightByRoute ParentClassName={chosenMenu == "FlightByRoute"?"flight-by-route _active":"flight-by-route"}/>
+              <FlightByRoute ParentClassName={chosenMenu == "FlightByRoute"?"flight-by-route _active":"flight-by-route"} />
               <RentByTime ParentClassName={chosenMenu == "RentByTime" ?"rent-by-time _active": "rent-by-time"} />
+              <SeacrhCrew ParentClassName={chosenMenu == "SearchCrew" ?"search-crew _active": "search-crew"} />
             </div>
           </div>
         </div>

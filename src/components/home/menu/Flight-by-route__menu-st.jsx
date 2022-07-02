@@ -1,82 +1,192 @@
-import React, { useEffect, useState } from "react";
+import React, {Fragment, useEffect, useState } from "react";
 import "../../../styles/home/menu/flight-by-route__menu-st.css";
 import "../../UI/input/Destination-input.jsx";
 import ChartIcon from "../../../images/home/menu/flight-by-route/chart.svg";
 import CalendarIcon from "../../../images/home/menu/flight-by-route/calendar.svg";
 import ChangeIcon from "../../../images/home/menu/flight-by-route/change.svg";
-import SettingsIcon from "../../../images/home/menu/flight-by-route/settings.svg";
-import MagnifyingGlass from "../../../images/home/menu/flight-by-route/magnifying-glass.svg";
-import Passenger from "../../../images/home/menu/flight-by-route/passenger.svg";
-import Minus from "../../../images/home/menu/flight-by-route/minus.svg";
-import Plus from "../../../images/home/menu/flight-by-route/plus.svg";
+import MenuFooter from "./Menu-footer";
 import DestinationInput from "../../UI/input/Destination-input.jsx";
+import Passengers from "./Passengers";
+import PlusCircle from "../../../images/UI/plus-circle.svg";
+import Buck from "../../../images/UI/buck.svg";
+import SliderRange from "../../UI/SliderRange";
+import Switcher from "../../UI/Switcher";
 
 
 const SeatTicketMenu = ({className}, activated) => {
-  const [passengersNumber, setPassengersNumber] = useState(0)
-  const passengerAdd = () =>{
-    setPassengersNumber(passengersNumber + 1)
+  const [typeOfTrip, setTypeOfTrip] = useState("One Way")
+  const [limitOfDestinations, setLimitOfDestinations] = useState(1)
+  const additionalDestinations = [
+    {id: 1
+    ,content:
+    <Fragment>
+  
+    <button type="button" id="change-locations">
+      <img src={ChangeIcon}/>
+    </button>
+  
+    <div className="flight-by-route__row">
+  
+      <DestinationInput
+        className="destination-input"
+        buttonClassName="flight-by-route__position-button"
+        buttonType='button'
+        inputPlaceholder="Next Destination"
+      />
+      <button
+        className="flight-by-route__chart-button"
+        type="button"
+      >
+        <img src={ChartIcon}/>
+      </button>
+  
+      <button
+        className="flight-by-route__cr-add-destination"
+        type="button"
+        onClick={(e)=>{
+          increaseLimit()
+          e.target.closest('button').classList.add('_hidden')
+        }}
+      >
+        <img src={PlusCircle}/>
+        Add Destination
+      </button>
+  
+    </div>
+  
+    </Fragment> 
+    },
+    {id: 2
+      ,content:
+      <Fragment>
+    
+      <button type="button" id="change-locations">
+        <img src={ChangeIcon}/>
+      </button>
+    
+      <div className="flight-by-route__row">
+    
+        <DestinationInput
+          className="destination-input"
+          buttonClassName="flight-by-route__position-button"
+          buttonType='button'
+          inputPlaceholder="Next Destination"
+        />
+        <button
+          className="flight-by-route__chart-button"
+          type="button"
+        >
+          <img src={ChartIcon}/>
+        </button>
+    
+        <button
+          className="flight-by-route__cr-add-destination"
+          type="button"
+          onClick={(e)=>{
+            increaseLimit()
+            e.target.closest('button').classList.add('_hidden')
+          }}
+        >
+          <img src={PlusCircle}/>
+          Add Destination
+        </button>
+    
+      </div>
+    
+      </Fragment> 
+    },
+    {id: 3
+      ,content:
+      <Fragment>
+    
+      <button type="button" id="change-locations">
+        <img src={ChangeIcon}/>
+      </button>
+    
+      <div className="flight-by-route__row">
+    
+        <DestinationInput
+          className="destination-input"
+          buttonClassName="flight-by-route__position-button"
+          buttonType='button'
+          inputPlaceholder="Next Destination"
+        />
+        <button
+          className="flight-by-route__chart-button"
+          type="button"
+        >
+          <img src={ChartIcon}/>
+        </button>
+    
+        <button
+          className="flight-by-route__cr-add-destination"
+          type="button"
+          onClick={(e)=>{
+            increaseLimit()
+            e.target.closest('button').classList.add('_hidden')
+          }}
+        >
+          <img src={PlusCircle}/>
+          Add Destination
+        </button>
+    
+      </div>
+    
+      </Fragment> 
+    },
+    {id: 4
+        ,content:
+        <Fragment>
+      
+        <button type="button" id="change-locations">
+          <img src={ChangeIcon}/>
+        </button>
+      
+        <div className="flight-by-route__row">
+      
+          <DestinationInput
+            className="destination-input"
+            buttonClassName="flight-by-route__position-button"
+            buttonType='button'
+            inputPlaceholder="Next Destination"
+          />
+          <button
+            className="flight-by-route__chart-button"
+            type="button"
+          >
+            <img src={ChartIcon}/>
+          </button>
+      
+          <button
+            className={limitOfDestinations ==4 ? "flight-by-route__cr-add-destination _hidden": "flight-by-route__cr-add-destination" }
+            type="button"
+            onClick={(e)=>{
+              increaseLimit()
+              e.target.closest('button').classList.add('_hidden')
+            }}
+          >
+            <img src={PlusCircle}/>
+            Add Destination
+          </button>
+      
+        </div>
+      
+        </Fragment> 
+    }
+  ]
+  const additionalDestinationToShow = additionalDestinations.slice(0,limitOfDestinations)
+  const increaseLimit = () =>{
+    if (limitOfDestinations < 4){
+    setLimitOfDestinations(limitOfDestinations+1)
+    }
   }
-  const passengerRemove = () =>{
-    setPassengersNumber(passengersNumber - 1)
-  }
-  const [adultPassengers, setAdultPassengers] = useState(0)
-  const [adultPassengersMinusButtonDisabled,setAdultPassengersMinusButtonDisabled] = useState(true)
-  const adultPassengersAdd = () =>{
-    setAdultPassengers(adultPassengers + 1)
-    passengerAdd()
-  }
-  const adultPassengersRemove = () =>{
-    setAdultPassengers(adultPassengers - 1)
-    passengerRemove()
-  }
-  const [childPassengers, setChildPassengers] = useState(0)
-  const [childPassengersMinusButtonDisabled,setChildPassengersMinusButtonDisabled] = useState(true)
-  const ChildPassengersAdd = () =>{
-    setChildPassengers(childPassengers + 1)
-    passengerAdd()
-  }
-  const ChildPassengersRemove = () =>{
-    setChildPassengers(childPassengers - 1)
-    passengerRemove()
-  }
-  const [babiesPassengers, setBabiesPassengers] = useState(0)
-  const [babiesPassengersMinusButtonDisabled, setBabiesPassengersMinusButtonDisabled] = useState(true)
-  const BabiesPassengersAdd = () =>{
-    setBabiesPassengers(babiesPassengers + 1)
-    passengerAdd()
-  }
-  const BabiesPassengersRemove = () =>{
-    setBabiesPassengers(babiesPassengers - 1)
-    passengerRemove()
-  }
+  const [stateOfFilters, setStateOfFilters] = useState("Hidden")
+  const showFilters = () => {stateOfFilters === "Hidden"? setStateOfFilters("Shown") : setStateOfFilters("Hidden")}
 
-  const displayPassengersPopup = () =>{
-    document.getElementById('st__passengers-popup').classList.toggle('_called')
-  }
-  useEffect(() =>{
-    if (adultPassengers === 0) {
-      setAdultPassengersMinusButtonDisabled(true)
-    }
-    else {
-      setAdultPassengersMinusButtonDisabled(false)
-    };
-    if (childPassengers === 0) {
-      setChildPassengersMinusButtonDisabled(true)
-    }
-    else {
-      setChildPassengersMinusButtonDisabled(false)
-    };
-    if (babiesPassengers === 0) {
-      setBabiesPassengersMinusButtonDisabled(true)
-    }
-    else {
-      setBabiesPassengersMinusButtonDisabled(false)
-    }
-  },[adultPassengers,childPassengers,babiesPassengers])
   return(
     <div className={className}>
-        <div className="flight-by-route__location-from">
+
+        <div className="flight-by-route__row">
           <DestinationInput 
             className="destination-input"
             buttonClassName="flight-by-route__position-button"
@@ -89,17 +199,27 @@ const SeatTicketMenu = ({className}, activated) => {
             id="location-from-chart">
               <img src={ChartIcon}/>
           </button>
-          <input id="st__rent-dates-input" placeholder="Rent Dates"/>
-          <button type="button" className="flight-by-route__calendar"
-            id="location-from-calendar">
-            <img src={CalendarIcon}/>
-          </button>
+
+          <div className="flight-by-route__rent-dates">
+            
+            <input placeholder="Rent Dates"/>
+
+            <button 
+              className="flight-by-route__calendar"
+              type="button"
+              >
+              <img src={CalendarIcon}/>
+            </button>
+            
+          </div>
           
         </div>
+
         <button type="button" id="change-locations">
           <img src={ChangeIcon}/>
         </button>
-        <div className="flight-by-route__location-to">
+
+        <div className="flight-by-route__row">
           <DestinationInput
             className="destination-input"
             buttonClassName="flight-by-route__position-button"
@@ -108,111 +228,61 @@ const SeatTicketMenu = ({className}, activated) => {
             inputId="location-to-input"
             inputPlaceholder="Location To..."
           />
-            <button type="button" className="flight-by-route__chart-button"
+            <button 
+              type="button" 
+              className="flight-by-route__chart-button"
               id="location-to-chart">
               <img src={ChartIcon}/>
             </button>
-            <select className="flight-by-route__selection"
-              id="way-type-selection">
+            <select 
+              className="flight-by-route__selection"
+              id="way-type-selection"
+              onChange={(e) => {
+                  setTypeOfTrip(e.target.value)
+              }}
+            >
               <option>One Way</option>
               <option>Round Way</option>
-              <option>Multiway</option>
+              <option>Multitrip</option>
             </select>
-            <div id="st__passengers-selection" onClick={displayPassengersPopup}>
-            <span><span>Passengers: </span><span>{passengersNumber}</span></span>
-            <img src={Passenger} alt="" />
-            
-          </div>
-          {/* Passengers selection popup */}
-          <div id="st__passengers-popup">
-            <div className="st__popup-top-decorating-element">
-              <div></div>
-            </div>
-            <div className="st__popup-row">
-              <div className="st__popup-text">
-                <h4>Adults</h4>
-                <span>Over 12 years</span>
-              </div>
-              <div className="st__popup-interractions">
-                <button type="button" 
-                        className="st__popup-minus"
-                        onClick={adultPassengersRemove} 
-                        disabled={adultPassengersMinusButtonDisabled}>
-                          <img src={Minus} alt="" />
-                </button>
-                <input  readOnly
-                        value={adultPassengers}
-                        className="st__popup-input" 
-                        type="number"
-                />
-                <button type="button" 
-                        className="st__popup-plus" 
-                        onClick={adultPassengersAdd}>
-                          <img src={Plus} alt="" />
-                </button>
-              </div>
-            </div>
-            <div className="st__popup-row">
-              <div className="st__popup-text">
-                <h4>Children</h4>
-                <span>From 2 to 12 years</span>
-              </div>
-              <div className="st__popup-interractions">
-                <button type="button" 
-                        className="st__popup-minus" 
-                        onClick={ChildPassengersRemove} 
-                        disabled={childPassengersMinusButtonDisabled}>
-                          <img src={Minus} alt="" />
-                </button>
-                <input readOnly 
-                       value={childPassengers} 
-                       className="st__popup-input" 
-                       type="number"
-                />
-                <button type="button" 
-                        className="st__popup-plus" 
-                        onClick={ChildPassengersAdd}>
-                          <img src={Plus} alt="" />
-                </button>
-              </div>
-            </div>
-            <div className="st__popup-row">
-              <div className="st__popup-text">
-                <h4>Babies</h4>
-                <span>Up to 2 years, no place</span>
-              </div>
-              <div className="st__popup-interractions">
-                <button type="button" 
-                        className="st__popup-minus" 
-                        onClick={BabiesPassengersRemove} 
-                        disabled={babiesPassengersMinusButtonDisabled}>
-                          <img src={Minus} alt=""/>
-                </button>
-                <input readOnly 
-                        value={babiesPassengers} 
-                        className="st__popup-input" 
-                        type="number"
-                />
-                <button type="button" 
-                        className="st__popup-plus" 
-                        onClick={BabiesPassengersAdd}>
-                          <img src={Plus} alt="" />
-                </button>
-              </div>
-            </div>
-          </div>
+            <Passengers className="flight-by-route__seat-ticket "/>
         </div>
-        <div className="flight-by-route__footer">
-          <button type="button" id="show-more-filters">
-            <img src={SettingsIcon}/>
-            <span>Show More Filters</span>
-          </button>
-          <button id="flight-by-route__search">
-            <img src={MagnifyingGlass}/>
-            <span>Search</span>
-          </button>
+
+        <div className={typeOfTrip == "Multitrip"? "flight-by-route__multiway _shown" : "flight-by-route__multiway"}>
+        {additionalDestinationToShow.map((item) => <Fragment key={item.id}>{item.content}</Fragment>)}
         </div>
-      </div>
+
+        <div className={stateOfFilters ==="Hidden"? "flight-by-route__cr-filters" : "flight-by-route__cr-filters _shown"}>
+
+          <div className="flight-by-route__row">
+            <SliderRange
+              className={'flight-by-route__cr-price'}
+              title={'Price'}
+              measures={'$'}
+              measuresIcon={Buck}
+              defaultPlaceholder={': From — To'}
+              sliderMin={100}
+              sliderMax={50000}
+              sliderDefault={[300,30000]}
+            />
+
+            <Switcher
+              text={"Only with luggage"}
+            />
+            <Switcher
+              text={"Without transfers"}
+            />
+            <Switcher
+              text={"Convenient transfers"}
+            />
+          </div>
+
+        </div>
+
+        <MenuFooter
+          showFilters={showFilters}
+        />
+    </div>
   )
 }
 

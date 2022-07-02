@@ -1,5 +1,4 @@
-.flight-by-route__location-from,
-.flight-by-route__location-to{
+.flight-by-route__row{
   display: flex;
   height: 56px;
 }
@@ -13,18 +12,24 @@
   border: none;
   padding: 18px;
   background: #F7F7F7;
-  box-sizing: border-box;
 }
-#rent-dates-input{
+.flight-by-route__rent-dates{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 442px;
-  box-sizing: border-box;
-  padding: 16px 0 16px 16px;
+  padding: 16px 19px 16px 16px;
   border: none;
   border-radius: 8px;
-  background: #F7F7F7;
+  background: white;
 }
+.flight-by-route__rent-dates input{
+  width: 380px;
+  border: none;
+  background: inherit;
+}
+
 .flight-by-route__calendar{
-  margin-left: -40px;
   border: none;
   background: none;
 }
@@ -49,27 +54,30 @@
   justify-content: space-between;
   margin: 45px 0 15px;
 }
-#show-more-filters{
+.flight-by-route__cr-filters{
+  margin-top: 30px;
+  display: none;
+}
+.flight-by-route__multiway{
+  display: none;
+}
+.flight-by-route__cr-filters._shown,
+.flight-by-route__multiway._shown{
+  display: block;
+}
+.flight-by-route__cr-add-destination{
   display: flex;
   align-items: center;
-  height: 27px;
+  justify-content: space-between;
   font-size: 16px;
-  background: none;
-  border: none;
-  color: #254D9B;
-}
-#show-more-filters span{
-  margin-left: 15px;
-}
-#flight-by-route__search{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  background: #FCE036;
-  padding: 17px 37px;
+  color: rgba(37, 77, 155, 1);
+  width: 166px;
   border: none;
 }
-#flight-by-route__search span{
-  margin-left: 8px
+.flight-by-route__cr-add-destination._hidden{
+  display: none;
+}
+.flight-by-route__cr-passengers.passengers{
+  margin-left: 30px;
+  width: 248px;
 }

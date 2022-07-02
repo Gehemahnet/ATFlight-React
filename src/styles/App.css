@@ -8,6 +8,9 @@ body{
   font-size: 16px;
   box-sizing: border-box;
 }
+body._using-popup{
+  overflow: hidden;
+}
 
 .wrapper{
   max-width: 1380px;
@@ -35,4 +38,7 @@ button{
   cursor: pointer;
   border-radius: 8px;
   background: none;
+}
+select{
+  font-size: 1em;
 }

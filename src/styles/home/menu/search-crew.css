@@ -1,0 +1,192 @@
+.search-crew{
+  display: none;
+}
+.search-crew._active{
+  display: block;
+  padding: 30px;
+}
+.search-crew__row{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.search-crew__slider.slider:nth-child(2),
+.search-crew__selection{
+  margin-left: 30px;
+}
+.search-crew__selection{
+  width: 530px;
+  height: 56px;
+  padding: 16px;
+  background: white;
+  border: none;
+  border-radius: 8px;
+  appearance: none;
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+}
+.search-crew__selection__control{
+  height: 56px;
+  border-radius: 8px !important;
+}
+#search-crew__vehicle-types,
+#search-crew__work-experience,
+#search-crew__languages{
+  margin-left: 30px;
+}
+.search-crew__selection__indicator.search-crew__selection__dropdown-indicator{
+  padding-right: 10px;
+}
+.search-crew__selection__placeholder{
+  color: black !important;
+}
+.search-crew__selection__indicator-separator,
+.search-crew__selection__indicator.search-crew__selection__clear-indicator{
+  display: none;
+}
+.search-crew__selection__multi-value{
+  background: none;
+}
+.search-crew__selection__indicator{
+  color: black !important;
+}
+#search-crew__vehicle-types{
+  position: relative;
+}
+
+.search-crew__selection-window{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-crew__selection-selected{
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-crew__selection-selected-item{
+  background: rgb(230, 230, 230);
+  padding: 3px;
+  font-size: 14px;
+  margin-right: 5px;
+}
+.search-crew__selection-selected-item button{
+  position: relative;
+  z-index: 3;
+  border: none;
+}
+.search-crew__selection-popup{
+  display: none
+}
+.search-crew__selection-popup._active{
+  position: absolute;
+  top: 70px;
+  right: -20px;
+  display: block;
+}
+.search-crew__selection-popup-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2)
+}
+.search-crew__selection-popup-wrapper{
+  position: relative;
+  z-index: 3;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 
+    0px 24px 32px rgba(0, 0, 0, 0.04), 
+    0px 16px 24px rgba(0, 0, 0, 0.04), 
+    0px 4px 8px rgba(0, 0, 0, 0.04), 
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+}
+.search-crew__selection-popup-decorating{
+  width: 24px;
+  height: 24px;
+  transform: rotate(45deg);
+  background: white;
+  position: absolute;
+  top: -12px;
+  right: 30px;
+}
+.search-crew__selection-popup-body{
+  display: flex;
+  flex-wrap: wrap;
+  width: 920px;
+  padding: 30px;
+  
+}
+.search-crew__selection-popup-body-item{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 156px;
+  height: 151px;
+  margin-right: 20px;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+}
+.search-crew__selection-popup-body-item img{
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.search-crew__selection-popup-body-item h4{
+  width: 140px;
+  height: 47px;
+  font-size: 16px;
+  font-family: "Noto Sans JP";
+  font-weight: 400;
+  text-align: center;  
+  margin-bottom: 10px;
+}
+.search-crew__selection-popup-body-item:nth-child(5n+5){
+  margin-right: 0;
+}
+.search-crew__selection-popup-body-item:nth-child(n+6){
+  margin-top: 20px;
+
+}
+.search-crew__selection-popup-body-item._clicked{
+  position: relative;
+  border: 1px solid #908BCE;
+  box-shadow: 
+    0px 24px 32px rgba(0, 0, 0, 0.04), 
+    0px 16px 24px rgba(0, 0, 0, 0.04), 
+    0px 4px 8px rgba(0, 0, 0, 0.04), 
+    0px 0px 1px rgba(0, 0, 0, 0.04)
+}
+.search-crew__selection-popup-body-item._clicked::after{
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #908BCE url("../../../images/UI/checkbox-checked.svg") no-repeat center;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 50%;
+}
+
+
+
+#search-crew__profession,
+#search-crew__salary{
+  width: 529px;
+}
+#search-crew__gender,
+#search-crew__languages{
+  width: 250px;
+}
+.search-crew__filters{
+  display: none;
+}
+.search-crew__filters._shown{
+  display: block;
+}
+

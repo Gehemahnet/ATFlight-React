@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "../styles/footer.css";
 import logoImg from "../images/header/logo-img.svg";
 import logoText from "../images/header/logo-txt.svg";
@@ -21,10 +22,10 @@ const Footer = () => {
                 <img src={logoText}/>
             </div>
             <div className="footer__navigation">
-              <a className="footer__link">Home</a>
-              <a className="footer__link">Blog</a>
-              <a className="footer__link">Add's</a>
-              <a className="footer__link">Settings</a>
+              <Link to={"/"} className="footer__link">Home</Link>
+              <Link to={"/blog"} className="footer__link">Blog</Link>
+              <Link to={"/adds"} className="footer__link">Add's</Link>
+              <Link to={"/settings"} className="footer__link">Settings</Link>
             </div>
             <div className="footer__social-media">
               <a className="footer__social-media-link" href=""><img src={fbLogo}/></a>
