@@ -3,11 +3,13 @@ import "../../../../styles/home/main/aside/aside.css";
 import Map from "./Map.jsx";
 import Filters from './Filters.jsx';
 
-const Aside = function() {
+const Aside = ({homePageState}) => {
   return(
     <aside className="aside">
       <Map/>
-      <Filters/>
+      <Filters
+        homePageState={homePageState}
+      />
     </aside>
   )
 }

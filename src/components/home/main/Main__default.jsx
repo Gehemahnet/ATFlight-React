@@ -1,30 +1,32 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import "../../../styles/home/main/main__default.css";
 import {TYPES, DESTINATIONS} from "../../../data/HomeMainData";
 import DefaultBackground from "../../../images/home/main/main-default-planes.jpg";
 import EmployeeImage from "../../../images/home/main/employee-img.svg"
 import Button from "../../UI/button/Button";
 
 
-const MainDefault = ({setVisible}) => {
+const MainDefault = ({className, setVisible}) => {
 
   let [numberOfDestinationCards,setNumberOfDestinationCards] = useState(8)
+  let[loadMoreStateDisabled, setLoadMoreStateDisabled] = useState(false)
+  
   let destinationSlicing = DESTINATIONS.slice(0, numberOfDestinationCards)
-  let shownDestinations = destinationSlicing.length
-  let limit = DESTINATIONS.length
+
   let loadMoreCards = () =>{
     setNumberOfDestinationCards(numberOfDestinationCards + 4)
   }
-  let[loadMoreStateDisabled, setLoadMoreStateDisabled] = useState(false)
+  
   
   
   useEffect(() =>{
-    {shownDestinations === limit? setLoadMoreStateDisabled(true):setLoadMoreStateDisabled(false)}
+    {destinationSlicing.length === DESTINATIONS.length? setLoadMoreStateDisabled(true):setLoadMoreStateDisabled(false)}
   },
-  [loadMoreStateDisabled, shownDestinations, limit]
+  [loadMoreStateDisabled, destinationSlicing, DESTINATIONS]
   )
 
   return(
-    <div className="main__content-default_active">
+    <div className={className}>
           <div className="content-default__header">
             <h1 className="content-default__header-title">We will help you find out the best air freight</h1>
             <h4 className="content-default__header-subtitle">We are largest search engine for airline tickets in the Caribbean.

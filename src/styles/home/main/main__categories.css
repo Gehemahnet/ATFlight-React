@@ -1,0 +1,103 @@
+.flight-by-route-charter-rent__main._active,
+.flight-by-route-seat-ticket__main._active,
+.rent-by-time__main._active,
+.search-crew__main._active{
+  display: flex;
+  flex-direction: column;
+}
+.category__header{
+  display: flex;
+  align-items: end;
+  line-height: 32px;
+}
+.category__header img{
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+}
+.category__items{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.category__item{
+  max-width: 323px;
+  padding: 20px;
+  border: 1px solid rgba(225, 225, 225, 0.5);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.category__item-photo{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+  width: 283px;
+  height: 163px;
+}
+.category__item-photo img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+.category__item-photo div{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  line-height: 27px;
+  min-width: 70px;
+  color: white;
+  background: 
+    linear-gradient(180deg, #4551A8 0%, #3E88C5 100%);
+  border-top: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-radius: 5px 0;
+}
+.category__item-text{
+  margin-top: 16px;
+}
+.category__item-name{
+  font-size: 20px;
+  line-height: 25.25px;
+}
+.category__item-crew{
+  margin-top: 2px;
+  margin-bottom: 8px;
+  color: #9A9A9A;
+  font-size: 12px;
+  line-height: 17.38px;
+}
+.category__item-tags{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.category__item-tag{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 77px;
+  height: 32px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.category__item-tag:first-child{
+  margin-bottom: 10px;
+}
+.category__item-tag-crew{
+  color:#908BCE;
+}
+.category__item-tag._active{
+  background: rgba(37, 76, 155, 0.1);
+  color: #254D9B;
+}
+.category__item-tag span{
+  margin-left: 10px;
+}

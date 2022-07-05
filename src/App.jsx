@@ -7,12 +7,19 @@ import Homepage from './pages/Homepage.jsx'
 import Blogpage from './pages/Blogpage.jsx';
 
 
-function App() {
+const App = () => {
+
   const [loginPopupVisible, setLoginPopupVisible] = useState(false)
   useEffect(()=>{
-    
-    {loginPopupVisible == true? document.querySelector(".user-popup").classList.add('_active') :document.querySelector(".user-popup").classList.remove('_active') }
+    if (loginPopupVisible == true){
+      document.body.classList.add('_using-popup')
+      document.querySelector(".user-popup").classList.add('_active')
+    } else{
+      document.body.classList.remove('_using-popup')
+      document.querySelector(".user-popup").classList.remove('_active')
+    }
   },[loginPopupVisible])
+
   return (
     <div className="App">
       <Header

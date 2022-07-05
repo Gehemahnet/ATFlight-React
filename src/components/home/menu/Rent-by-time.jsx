@@ -8,7 +8,7 @@ import Passengers from "./Passengers";
 import SliderRange from "../../UI/SliderRange";
 import Buck from "../../../images/UI/buck.svg"
 
-const RentByTime = ({ParentClassName}) => {
+const RentByTime = ({parentClassName ,setHomePageState}) => {
 
   const [isReturnToAnother, setReturnToAnother] = useState(false)
   const [stateOfFilters, setStateOfFilters] = useState("Hidden")
@@ -27,7 +27,7 @@ const RentByTime = ({ParentClassName}) => {
   ]
 
   return(
-    <form className={ParentClassName}>
+    <form className={parentClassName}>
 
       <div className="rent-by-time__row">
         <DestinationInput 
@@ -126,6 +126,8 @@ const RentByTime = ({ParentClassName}) => {
           />
       </div>
       <MenuFooter
+        homeStateToSet={"RentByTime"}
+        setHomePageState={setHomePageState} 
         showFilters={showFilters}
       />
 

@@ -7,7 +7,7 @@ import DropDown from "../../../images/home/menu/flight-by-route/select-dropdown.
 import DropUp from "../../../images/home/menu/flight-by-route/select-dropup.svg";
 import { TYPES } from "../../../data/HomeMainData";
 
-const SeacrhCrew = ({ParentClassName}) => {
+const SeacrhCrew = ({parentClassName, setHomePageState}) => {
   
   const [stateOfFilters, setStateOfFilters] = useState("Hidden")
   const showFilters = () => {stateOfFilters === "Hidden"? setStateOfFilters("Shown") : setStateOfFilters("Hidden")}
@@ -34,7 +34,7 @@ const SeacrhCrew = ({ParentClassName}) => {
   
 
   return(
-    <form className={ParentClassName}>
+    <form className={parentClassName}>
 
       <div className="search-crew__row">
 
@@ -187,6 +187,8 @@ const SeacrhCrew = ({ParentClassName}) => {
       </div>  
 
       <MenuFooter
+          homeStateToSet={"SearchCrew"}
+          setHomePageState={setHomePageState}
           showFilters={showFilters}
       />
 

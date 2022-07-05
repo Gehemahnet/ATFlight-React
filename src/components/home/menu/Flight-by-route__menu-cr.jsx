@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import "../../../styles/home/menu/flight-by-route__menu-cr.css";
 import ChartIcon from "../../../images/home/menu/flight-by-route/chart.svg";
 import CalendarIcon from "../../../images/home/menu/flight-by-route/calendar.svg";
@@ -10,7 +10,7 @@ import Passengers from "./Passengers";
 import Buck from "../../../images/UI/buck.svg";
 import PlusCircle from "../../../images/UI/plus-circle.svg";
 
-const CharterRentMenu = ({className}) => {
+const CharterRentMenu = ({className, setHomePageState}) => {
   const [typeOfTrip, setTypeOfTrip] = useState("One Way")
   const [limitOfDestinations, setLimitOfDestinations] = useState(1)
   const additionalDestinations = [
@@ -18,7 +18,7 @@ const CharterRentMenu = ({className}) => {
     ,content:
     <Fragment>
   
-    <button type="button" id="change-locations">
+    <button type="button" className="change-locations">
       <img src={ChangeIcon}/>
     </button>
   
@@ -57,7 +57,7 @@ const CharterRentMenu = ({className}) => {
       ,content:
       <Fragment>
     
-      <button type="button" id="change-locations">
+      <button type="button" className="change-locations">
         <img src={ChangeIcon}/>
       </button>
     
@@ -96,7 +96,7 @@ const CharterRentMenu = ({className}) => {
       ,content:
       <Fragment>
     
-      <button type="button" id="change-locations">
+      <button type="button" className="change-locations">
         <img src={ChangeIcon}/>
       </button>
     
@@ -135,7 +135,7 @@ const CharterRentMenu = ({className}) => {
         ,content:
         <Fragment>
       
-        <button type="button" id="change-locations">
+        <button type="button" className="change-locations">
           <img src={ChangeIcon}/>
         </button>
       
@@ -207,7 +207,7 @@ const CharterRentMenu = ({className}) => {
 
         </div>
 
-        <button type="button" id="change-locations">
+        <button type="button" className="change-locations">
           <img src={ChangeIcon}/>
         </button>
 
@@ -276,6 +276,8 @@ const CharterRentMenu = ({className}) => {
         </div>
         
         <MenuFooter
+          homeStateToSet={"CharterRent"}
+          setHomePageState={setHomePageState}
           showFilters={showFilters}
         />
 

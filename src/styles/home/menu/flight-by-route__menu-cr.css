@@ -2,10 +2,11 @@
   display: flex;
   height: 56px;
 }
-#change-locations{
+.change-locations{
   border: none;
   background: none;
   margin: 8px 0 8px 486px;
+  align-self: flex-start;
 }
 .flight-by-route__chart-button{
   margin: 0 30px;

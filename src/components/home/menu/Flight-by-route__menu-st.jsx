@@ -13,7 +13,7 @@ import SliderRange from "../../UI/SliderRange";
 import Switcher from "../../UI/Switcher";
 
 
-const SeatTicketMenu = ({className}, activated) => {
+const SeatTicketMenu = ({className, setHomePageState}) => {
   const [typeOfTrip, setTypeOfTrip] = useState("One Way")
   const [limitOfDestinations, setLimitOfDestinations] = useState(1)
   const additionalDestinations = [
@@ -21,7 +21,7 @@ const SeatTicketMenu = ({className}, activated) => {
     ,content:
     <Fragment>
   
-    <button type="button" id="change-locations">
+    <button type="button" className="change-locations">
       <img src={ChangeIcon}/>
     </button>
   
@@ -60,7 +60,7 @@ const SeatTicketMenu = ({className}, activated) => {
       ,content:
       <Fragment>
     
-      <button type="button" id="change-locations">
+      <button type="button" className="change-locations">
         <img src={ChangeIcon}/>
       </button>
     
@@ -99,7 +99,7 @@ const SeatTicketMenu = ({className}, activated) => {
       ,content:
       <Fragment>
     
-      <button type="button" id="change-locations">
+      <button type="button" className="change-locations">
         <img src={ChangeIcon}/>
       </button>
     
@@ -138,7 +138,7 @@ const SeatTicketMenu = ({className}, activated) => {
         ,content:
         <Fragment>
       
-        <button type="button" id="change-locations">
+        <button type="button" className="change-locations">
           <img src={ChangeIcon}/>
         </button>
       
@@ -215,7 +215,7 @@ const SeatTicketMenu = ({className}, activated) => {
           
         </div>
 
-        <button type="button" id="change-locations">
+        <button type="button" className="change-locations">
           <img src={ChangeIcon}/>
         </button>
 
@@ -280,6 +280,8 @@ const SeatTicketMenu = ({className}, activated) => {
         </div>
 
         <MenuFooter
+          homeStateToSet={"SeatTicket"}
+          setHomePageState={setHomePageState} 
           showFilters={showFilters}
         />
     </div>

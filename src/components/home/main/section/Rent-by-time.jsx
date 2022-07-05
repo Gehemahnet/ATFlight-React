@@ -1,11 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MagnifyingGlass from '../../../../images/home/main/section/magnifying-glass.svg'
 import CategoryCards from "./CategoryCards.jsx";
 import Button from "../../../UI/button/Button";
 
-
-
-const FlightByRouteCharterRent = (props) => {
+const RentByTime = (props) => {
   const planes = [{
     id: 1,
     name: "McDonnell Douglas MD-80",
@@ -223,18 +221,17 @@ const FlightByRouteCharterRent = (props) => {
     setNumberOfCards(numberOfCards + numberOfCards)
   }
   const planesSlicing = planes.slice(0, numberOfCards)
-  // useEffect
   
   return(
     <div className={props.className}>
       <div className="category__header">
-        <h1>Search results for Flight by route (Charter Rent)</h1>
+        <h1>Search results for Rent by time</h1>
         <img src={MagnifyingGlass} alt="" />
       </div>
       <div className="category__items">
         {planesSlicing.map(card =>
           <CategoryCards
-            type={"Charter Rent"}
+            type={"Rent By Time"}
             key={card.id} 
             plane={card}
           />
@@ -251,4 +248,4 @@ const FlightByRouteCharterRent = (props) => {
 }
 
 
-export default FlightByRouteCharterRent
+export default RentByTime

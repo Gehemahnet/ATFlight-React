@@ -5,7 +5,8 @@ import Button from "../components/UI/button/Button.jsx";
 import Calendar from "../images/blog/latest-articles/calendar.svg";
 import GreyCalendar from "../images/blog/latest-articles/greyCalendar.svg"
 import Eye from "../images/blog/popular/eye.svg";
-import Arrow from "../images/blog/arrow-right.svg"
+import Arrow from "../images/blog/arrow-right.svg";
+import Article from "../components/blog/Article";
 
 const Blogpage = () => {
   const [activeTitle, setActiveTitle] = useState(1)

@@ -6,13 +6,12 @@ import SettingsIcon from "../../../images/home/menu/flight-by-route/settings.svg
 import X from "../../../images/UI/x.svg"
 import { useState } from "react";
 
-const MenuFooter = ({showFilters}) => {
+const MenuFooter = ({showFilters, homeStateToSet, setHomePageState}) => {
 
   const buttonVariants = [
     {image:SettingsIcon, text: "Show More Filters", key:1},
     {image:X, text: "Hide Filters", key:2}
   ]
-
   const [stateOfButton, setStateOfButton] = useState(buttonVariants[0])
   const [stateOfFilters, setStateOfFilters] = useState("Hidden")
 
@@ -35,6 +34,10 @@ const MenuFooter = ({showFilters}) => {
           </button>
 
           <Button
+            onClick={ (e) => {
+              e.preventDefault()
+              setHomePageState(homeStateToSet)
+            }}
             type="submit"
             className="button"
             image={MagnifyingGlass}
