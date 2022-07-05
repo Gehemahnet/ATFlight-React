@@ -1,6 +1,7 @@
 {
   "name": "atf",
   "version": "0.1.0",
+  "homepage": "https://gehemahnet.github.io/react-gh-pages",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -26,6 +27,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -48,6 +51,9 @@
     ]
   },
   "devDependencies": {
-    "@types/react-time-picker": "^4.0.2"
+    "@types/react-time-picker": "^4.0.2",
+    "gh-pages": "^4.0.0",
+    "install": "^0.13.0",
+    "npm": "^8.13.2"
   }
 }
