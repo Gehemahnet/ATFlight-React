@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ATFlight-React/static/css/main.7b2c5452.css",
-    "main.js": "/ATFlight-React/static/js/main.c397c19d.js",
+    "main.js": "/ATFlight-React/static/js/main.a08cab8f.js",
     "static/js/787.77a03efd.chunk.js": "/ATFlight-React/static/js/787.77a03efd.chunk.js",
     "static/media/title-bg.jpg": "/ATFlight-React/static/media/title-bg.9ae2d5e5f2a4ece69896.jpg",
     "static/media/bg.jpg": "/ATFlight-React/static/media/bg.240b5cd10dc9f3096ed2.jpg",
@@ -112,11 +112,11 @@
     "static/media/x.svg": "/ATFlight-React/static/media/x.2a26ba163e3b0e514db5074d8b35b7e3.svg",
     "static/media/checkbox-checked.svg": "/ATFlight-React/static/media/checkbox-checked.502d6f87d7f207c7a6b0.svg",
     "main.7b2c5452.css.map": "/ATFlight-React/static/css/main.7b2c5452.css.map",
-    "main.c397c19d.js.map": "/ATFlight-React/static/js/main.c397c19d.js.map",
+    "main.a08cab8f.js.map": "/ATFlight-React/static/js/main.a08cab8f.js.map",
     "787.77a03efd.chunk.js.map": "/ATFlight-React/static/js/787.77a03efd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7b2c5452.css",
-    "static/js/main.c397c19d.js"
+    "static/js/main.a08cab8f.js"
   ]
 }
